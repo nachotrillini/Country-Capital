@@ -1,0 +1,39 @@
+﻿@page
+@model PaisCap.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Put a country for search his capital.</p>
+
+    <form method="POST">
+
+        <input type="text" asp-for="Pais.Nombre" />
+        <button type="submit" class="btn btn-outline-secondary">Search</button>
+
+
+    </form>
+    <br />
+    <br />
+    @if (Model.paisDesdeDb != null)
+    {
+        if (Model.paisDesdeDb.Capital != "Country not found")
+        {
+            if (Model.paisDesdeDb.Nombre == "Bolivia")
+            {
+                <h5 class="text-secondary">The capitals are: @Model.paisDesdeDb.Capital</h5>
+            }
+            else
+            {
+            <h5 class="text-secondary">The capital is: @Model.paisDesdeDb.Capital</h5>                   
+            }
+        }
+        else
+        {
+            <h5 class="text-secondary">@Model.paisDesdeDb.Capital!</h5>
+        }
+
+    }
+</div>

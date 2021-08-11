@@ -1,0 +1,36 @@
+﻿@page
+@model PaisCap.Pages.Paises.DeleteModel
+@{
+    ViewData["Title"] = "Delete Information";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2 class="text-secondary">Delete country information</h2>
+
+            <form method="POST">
+
+                <input type="hidden" asp-for="Pais.Id" />
+
+                <div class="mb-3">
+                    <label asp-for="Pais.Nombre" class="form-label">Name</label>
+                    <input asp-for="Pais.Nombre" class="form-control"  readonly/>
+                    <span asp-validation-for="Pais.Nombre" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Pais.Capital" class="form-label"></label>
+                    <input asp-for="Pais.Capital" class="form-control" readonly/>
+                    <span asp-validation-for="Pais.Capital" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-outline-primary">Delete</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <a asp-page="Index" class="btn btn-outline-success">Return</a>
+        </div>
+    </div>
+</div>
