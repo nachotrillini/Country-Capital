@@ -1,0 +1,36 @@
+﻿@page
+@model PaisCap.Pages.Paises.CreateModel
+@{
+    ViewData["Title"] = "New Country";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2 class="text-secondary">Enter a new country</h2>
+
+            <form method="POST">
+
+                <div class="mb-3">
+                    <label asp-for="Pais.Nombre" class="form-label">Name</label>
+                    <input asp-for="Pais.Nombre" class="form-control" placeholder="Enter the name of the country"/>
+                    <span asp-validation-for="Pais.Nombre" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Pais.Capital" class="form-label"></label>
+                    <input asp-for="Pais.Capital" class="form-control" placeholder="Enter the capital"/>
+                    <span asp-validation-for="Pais.Capital" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-outline-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <a asp-page="Index" class="btn btn-outline-success">Return</a>
+        </div>
+    </div>
+</div>
+
